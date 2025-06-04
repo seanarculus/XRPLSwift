@@ -35,11 +35,6 @@ let package = Package(
             url: "https://github.com/realm/SwiftLint/releases/download/0.48.0/SwiftLintBinary-macos.artifactbundle.zip",
             checksum: "9c255e797260054296f9e4e4cd7e1339a15093d75f7c4227b9568d63edddba50"
         ),
-        .plugin(
-            name: "SwiftLintPlugin",
-            capability: .buildTool(),
-            dependencies: ["SwiftLintBinary"]
-        ),
         // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
             name: "XRPLSwift",
@@ -50,8 +45,7 @@ let package = Package(
                 "AnyCodable",
                 "CryptoSwift",
                 "BigInt"
-            ],
-            plugins: ["SwiftLintPlugin"]
+            ]
         ),
         .testTarget(
             name: "XRPLSwiftUTests",
